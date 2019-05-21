@@ -1,0 +1,7 @@
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.csprojAssemblyReference.cache
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.csproj.CoreCompileInputs.cache
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.exe.config
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.exe
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.pdb
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.exe
+C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.pdb
