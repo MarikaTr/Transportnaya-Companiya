@@ -70,7 +70,7 @@ namespace TransportnayaCompaniya
                 };
                 try
                 {
-                    Console.WriteLine("\nВыберите пункт меню:" +
+                    Console.WriteLine("Выберите пункт меню:" +
                         "\n\t1 - Просмотреть информацию о транспортых средствах." +
                         "\n\t2 - Внести новое транспортное средство." +
                         "\n\t0 - Выйти из программы.");
@@ -186,7 +186,10 @@ namespace TransportnayaCompaniya
             {
                 try
                 {
-                    Console.WriteLine("Выберите тип наземного транспорта:\n\t1 - Самолёт.\n\t2 - Вертолёт.\n\t0 - Выйти из программы.");
+                    Console.WriteLine("Выберите тип наземного транспорта:" +
+                        "\n\t1 - Самолёт." +
+                        "\n\t2 - Вертолёт." +
+                        "\n\t0 - Выйти из программы.");
                     a = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
@@ -212,6 +215,155 @@ namespace TransportnayaCompaniya
             Console.ReadKey();
             mainMenu();
         }
+
+        public static void showTrain()
+        {
+            Console.Clear();
+            if (listTrain.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного поезда");
+            }
+            else
+            {
+                Console.WriteLine("Поезда:");
+                headerTrain();
+                foreach (Train x in listTrain)
+                {
+                    x.getInfoTrain();
+                };
+            }
+            zavershenieProsmotra();   
+        }
+        public static void showTruck()
+        {
+            Console.Clear();
+            if (listTruck.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного грузовика");
+            }
+            else
+            {
+                Console.WriteLine("Грузовики:");
+                headerTruck();
+                foreach (Truck x in listTruck)
+                {
+                    x.getInfoTruck();
+                };
+            }
+            zavershenieProsmotra();
+        }
+        public static void showTanker()
+        {
+            Console.Clear();
+            if (listTanker.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного танкера");
+            }
+            else
+            {
+                Console.WriteLine("Танкера:");
+                headerTanker();
+                foreach (Tanker x in listTanker)
+                {
+                    x.getInfoTanker();
+                };
+            }
+            zavershenieProsmotra();
+        }
+
+        public static void showLiner()
+        {
+            Console.Clear();
+            if (listLiner.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного лайнера");
+            }
+            else
+            {
+                Console.WriteLine("Лайнеры:");
+                headerLiner();
+                foreach (Liner x in listLiner)
+                {
+                    x.getInfoLiner();
+                };
+            }
+            zavershenieProsmotra();
+        }
+
+        public static void showPlane()
+        {
+            Console.Clear();
+            if (listPlane.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного самолета");
+            }
+            else
+            {
+                Console.WriteLine("Самолеты:");
+                headerPlane();
+                foreach (Plane x in listPlane)
+                {
+                    x.getInfoPlane();
+                };
+            }
+            zavershenieProsmotra();
+        }
+
+        public static void showHelic()
+        {
+            Console.Clear();
+            if (listHelic.Count == 0)
+            {
+                Console.WriteLine("В транспортной компании нет ни одного вертолета");
+            }
+            else
+            {
+                Console.WriteLine("Вертолеты:");
+                headerHelicopter();
+                foreach (Helicopter x in listHelic)
+                {
+                    x.getInfoHelic();
+                };
+            }
+            zavershenieProsmotra();
+        }
+        public static void addTrain()
+        {
+            listTrain.Add(new Train());
+            listTrain.ElementAt(listTrain.Count - 1).setInfoTrain();
+            zavershenieVvoda();
+        }
+        public static void addTruck()
+        {
+            listTruck.Add(new Truck());
+            listTruck.ElementAt(listTruck.Count - 1).setInfoTruck();
+            zavershenieVvoda();
+        }
+        public static void addTanker()
+        {
+            listTanker.Add(new Tanker());
+            listTanker.ElementAt(listTanker.Count - 1).setInfoTanker();
+            zavershenieVvoda();
+        }
+        public static void addLiner()
+        {
+            listLiner.Add(new Liner());
+            listLiner.ElementAt(listLiner.Count - 1).setInfoLiner();
+            zavershenieVvoda();
+        }
+        public static void addPlane()
+        {
+            listPlane.Add(new Plane());
+            listPlane.ElementAt(listPlane.Count - 1).setInfoPlane();
+            zavershenieVvoda();
+        }
+        public static void addHelic()
+        {
+            listHelic.Add(new Helicopter());
+            listHelic.ElementAt(listHelic.Count - 1).setInfoHelic();
+            zavershenieVvoda();
+        }
+
         public static void mainMenu()
         {
             switch (firstMenu())
@@ -223,38 +375,10 @@ namespace TransportnayaCompaniya
                             switch (menuLand())
                             {
                                 case 1:
-                                    Console.Clear();
-                                    if (listTrain.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного поезда");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Поезда:");
-                                        headerTrain();
-                                        foreach (Train x in listTrain)
-                                        {
-                                            x.getInfoTrain();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showTrain();
                                     break;
                                 case 2:
-                                    Console.Clear();
-                                    if (listTruck.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного грузовика");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Грузовики:");
-                                        headerTruck();
-                                        foreach (Truck x in listTruck)
-                                        {
-                                            x.getInfoTruck();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showTruck();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
@@ -266,38 +390,10 @@ namespace TransportnayaCompaniya
                             switch (menuWater())
                             {
                                 case 1:
-                                    Console.Clear();
-                                    if (listTanker.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного танкера");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Танкера:");
-                                        headerTanker();
-                                        foreach (Tanker x in listTanker)
-                                        {
-                                            x.getInfoTanker();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showTanker();
                                     break;
                                 case 2:
-                                    Console.Clear();
-                                    if (listLiner.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного лайнера");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Лайнеры:");
-                                        headerLiner();
-                                        foreach (Liner x in listLiner)
-                                        {
-                                            x.getInfoLiner();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showLiner();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
@@ -307,38 +403,10 @@ namespace TransportnayaCompaniya
                             switch (menuAir())
                             {
                                 case 1:
-                                    Console.Clear();
-                                    if (listPlane.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного самолета");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Самолеты:");
-                                        headerPlane();
-                                        foreach (Plane x in listPlane)
-                                        {
-                                            x.getInfoPlane();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showPlane();
                                     break;
                                 case 2:
-                                    Console.Clear();
-                                    if (listHelic.Count == 0)
-                                    {
-                                        Console.WriteLine("В транспортной компании нет ни одного вертолета");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Вертолеты:");
-                                        headerHelicopter();
-                                        foreach (Helicopter x in listHelic)
-                                        {
-                                            x.getInfoHelic();
-                                        };
-                                    }
-                                    zavershenieProsmotra();
+                                    showHelic();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
@@ -354,14 +422,10 @@ namespace TransportnayaCompaniya
                             switch (menuLand())
                             {
                                 case 1:
-                                    listTrain.Add(new Train());
-                                    listTrain.ElementAt(listTrain.Count - 1).setInfoTrain();
-                                    zavershenieVvoda();
+                                    addTrain();
                                     break;
                                 case 2:
-                                    listTruck.Add(new Truck());
-                                    listTruck.ElementAt(listTruck.Count - 1).setInfoTruck();
-                                    zavershenieVvoda();
+                                    addTruck();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
@@ -373,14 +437,10 @@ namespace TransportnayaCompaniya
                             switch (menuWater())
                             {
                                 case 1:
-                                    listTanker.Add(new Tanker());
-                                    listTanker.ElementAt(listTanker.Count - 1).setInfoTanker();
-                                    zavershenieVvoda();
+                                    addTanker();
                                     break;
                                 case 2:
-                                    listLiner.Add(new Liner());
-                                    listLiner.ElementAt(listLiner.Count - 1).setInfoLiner();
-                                    zavershenieVvoda();
+                                    addLiner();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
@@ -390,14 +450,10 @@ namespace TransportnayaCompaniya
                             switch (menuAir())
                             {
                                 case 1:
-                                    listPlane.Add(new Plane());
-                                    listPlane.ElementAt(listPlane.Count - 1).setInfoPlane();
-                                    zavershenieVvoda();
+                                    addPlane();
                                     break;
                                 case 2:
-                                    listHelic.Add(new Helicopter());
-                                    listHelic.ElementAt(listHelic.Count - 1).setInfoHelic();
-                                    zavershenieVvoda();
+                                    addHelic();
                                     break;
                                 case 0:
                                     Environment.Exit(0);
