@@ -9,16 +9,48 @@ namespace TransportnayaCompaniya
     class Train : LandTransport
     {
         private String tipLokomotiva;//Электровоз, тепловоз
+        public Train() : base()
+        {
+            this.tipLokomotiva = "Не указано";
+        }
         public Train(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int chtoNibud, String tipLokomotiva)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, chtoNibud)
         {
             this.tipLokomotiva = tipLokomotiva; // добавляем инициализацию новых полей
         }
 
+        //--------
+
+        public void setInfoTrain()
+        {
+            setInfoLand();
+            Boolean menu = true;
+            String s = "-";
+            do
+            {
+                if (s.Length == 0)
+                {
+                    Console.WriteLine("Неправильный ввод! Вы ввели пустую строку");
+                };
+                try
+                {
+                    Console.WriteLine("Введите тип локомотива: ");
+                    s = Console.ReadLine();
+                    tipLokomotiva = s;
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите строку");
+                };
+            }
+            while ((menu == true) || (s.Length == 0));
+        }
+
         public void getInfoTrain()
         {
-            Console.Write("|{0}\t", tipLokomotiva);
-            getInfoL();
+            getInfoLand();
+            Console.WriteLine("{0}\t|", tipLokomotiva);
         }
     }
 }

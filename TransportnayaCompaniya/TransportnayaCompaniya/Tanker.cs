@@ -8,17 +8,41 @@ namespace TransportnayaCompaniya
 {
     class Tanker : WaterTransport
     {
-        private String klassTankera; // "Panamax", "Aframax", "Suezmax", VLCC и ULCC
-        public Tanker(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, String klassTankera)
+        private int shirinaKorpusa; // 
+        public Tanker() : base()
+        {
+            this.shirinaKorpusa = 0;
+        }
+        public Tanker(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, int shirinaKorpusa)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, displacement)
         {
-            this.klassTankera = klassTankera; // добавляем инициализацию новых полей
+            this.shirinaKorpusa = shirinaKorpusa; // добавляем инициализацию новых полей
         }
-
+        //------------------------------------------
+        public void setInfoTanker()
+        {
+            setInfoWater();
+            Boolean menu = true;
+            uint a = 0;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите ширину корпуса: ");
+                    shirinaKorpusa = int.Parse(Console.ReadLine());
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
+        }
         public void getInfoTanker()
         {
-            Console.Write("|{0}\t", klassTankera);
-            getInfoW();
+            getInfoWater();
+            Console.WriteLine("{0}\t|", shirinaKorpusa);
         }
     }
 }

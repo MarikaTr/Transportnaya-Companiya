@@ -8,53 +8,52 @@ namespace TransportnayaCompaniya
 {
     class LandTransport : Transport
     {
-        private int chtoNibud;
+        private int tormoznoiPut;
         //CConstructors-------------------------------------
         public LandTransport() : base()
         {
-            this.chtoNibud = 0;
+            this.tormoznoiPut = 0;
         }
-        public LandTransport(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int chtoNibud)
+        public LandTransport(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int tormoznoiPut)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost)
         {
-            this.chtoNibud = chtoNibud;
+            this.tormoznoiPut = tormoznoiPut;
         }
         //--Setters----------------------------------------
-        public void setChtoNibud(int chtoNibud)
+        public void settormoznoiPut(int tormoznoiPut)
         {
-            this.chtoNibud = chtoNibud;
+            this.tormoznoiPut = tormoznoiPut;
         }
         //--Getters-----------------------------------------
-        public int getchtoNibud()
+        public int gettormoznoiPut()
         {
-            return chtoNibud;
+            return tormoznoiPut;
         }
-        /*
-        public void setNumDoors(int n)
+        public void setInfoLand()
         {
-            numDoors = n;
+            setInfo();
+            Boolean menu = true;
+            uint a = 0;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите тормозной путь: ");
+                    tormoznoiPut = int.Parse(Console.ReadLine());
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
         }
-        public int getNumDoors()
+    
+        public void getInfoLand()
         {
-            return numDoors;
-        }
-        public void setFullTime(Boolean b)
-        {
-            fullTime = b;
-        }
-        public Boolean isFullTime()
-        {
-            return fullTime;
-        }
-        */
-        /*(public String toString()
-        {
-            return getFirm() + " " + getSpeed() + " " + ;
-        }*/
-        public void getInfoL()
-        {
-            Console.Write("|{0}\t", chtoNibud);
             getInfo();
+            Console.Write("{0}\t|", tormoznoiPut);
         }
     }
 }

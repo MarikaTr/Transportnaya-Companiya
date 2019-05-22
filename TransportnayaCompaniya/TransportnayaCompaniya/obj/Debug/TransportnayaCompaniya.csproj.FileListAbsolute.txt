@@ -5,3 +5,10 @@ C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\bin\D
 C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.pdb
 C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.exe
 C:\Users\Marika\source\repos\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.pdb
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.exe.config
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.exe
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\bin\Debug\TransportnayaCompaniya.pdb
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.csprojAssemblyReference.cache
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.csproj.CoreCompileInputs.cache
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.exe
+C:\Users\Marika\Transportnaya-Companiya\TransportnayaCompaniya\TransportnayaCompaniya\obj\Debug\TransportnayaCompaniya.pdb

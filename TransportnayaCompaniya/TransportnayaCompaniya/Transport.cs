@@ -77,11 +77,110 @@ namespace TransportnayaCompaniya
         {
             Console.WriteLine("Я доставил груз!");
         }
+        /*public void setInfo()
+        {
+            Console.WriteLine("Введите модель: ");
+            setFirm(Console.ReadLine());
+            Console.WriteLine("Введите скорость: ");
+            setSpeed(int.Parse(Console.ReadLine()));
+            Console.WriteLine("Введите количество персонала: ");
+            setKolPersonala(int.Parse(Console.ReadLine()));
+            Console.WriteLine("Введите количество пассажиров: ");
+            setKolPassajirov(int.Parse(Console.ReadLine()));
+            Console.WriteLine("Введите грузоподъемность: ");
+            setGruzopodjomnost(int.Parse(Console.ReadLine()));
+        }*/
         public void getInfo()
         {
-            Console.WriteLine("|{0}\t|{1}\t|{2}\t\t|{3}\t\t|{4}\t\t|", firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost);
+            Console.Write("|{0}\t|{1}\t|{2}\t|{3}\t|{4}\t|", firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost);
             //String s = firm + speed;// + kolPersonala.ToString + kolPassajirov.ToString + gruzopodjomnost.ToString);
             //return s;
+        }
+
+        public void setInfo()
+        {
+            Boolean menu = true;
+            uint a = 0;
+            String s = "-";
+            do
+            {
+                if (s.Length == 0)
+                {
+                    Console.WriteLine("Неправильный ввод! Вы ввели пустую строку");
+                };
+                try
+                {
+                    Console.WriteLine("Введите модель: ");
+                    s = Console.ReadLine();
+                    setFirm(s);
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите строку");
+                };
+            }
+            while ((menu == true) || (s.Length == 0));
+            menu = true;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите скорость: ");
+                    setSpeed(int.Parse(Console.ReadLine()));
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
+            menu = true;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите количество персонала: ");
+                    setKolPersonala(int.Parse(Console.ReadLine()));
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
+            menu = true;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите количество пассажиров: ");
+                    setKolPassajirov(int.Parse(Console.ReadLine()));
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
+            menu = true;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите грузоподъемность: ");
+                    setGruzopodjomnost(int.Parse(Console.ReadLine()));
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
         }
     }
 }

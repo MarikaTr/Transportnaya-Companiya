@@ -8,17 +8,41 @@ namespace TransportnayaCompaniya
 {
     class Liner : WaterTransport
     {
-        private String urovenServisa; // standard, premium, lux
-        public Liner(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, String klassTankera)
+        private int kolichestvoZvezd; // 1 - 5
+        public Liner() : base()
+        {
+            this.kolichestvoZvezd = 0; 
+        }
+        public Liner(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, int kolichestvoZvezd)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, displacement)
         {
-            this.urovenServisa = urovenServisa; // добавляем инициализацию новых полей
+            this.kolichestvoZvezd = kolichestvoZvezd; // добавляем инициализацию новых полей
         }
-
+        //--------------------------------------------------
+        public void setInfoLiner()
+        {
+            setInfoWater();
+            Boolean menu = true;
+            uint a = 0;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Введите количество звёзд: ");
+                    kolichestvoZvezd = int.Parse(Console.ReadLine());
+                    menu = false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Неправильный ввод! Введите положительное число.");
+                };
+            }
+            while (menu == true);
+        }
         public void getInfoLiner()
         {
-            Console.Write("|{0}\t", urovenServisa);
-            getInfoW();
+            getInfoWater();
+            Console.WriteLine("{0}\t|", kolichestvoZvezd);
         }
     }
 }
