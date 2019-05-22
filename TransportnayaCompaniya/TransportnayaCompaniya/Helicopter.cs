@@ -8,13 +8,13 @@ namespace TransportnayaCompaniya
 {
     class Helicopter : AirTransport
     {
-        private int kolichestvoVintov;
+        private uint kolichestvoVintov;
         //--Constructors----------------------------------------------------
         public Helicopter() : base()
         {
             this.kolichestvoVintov = 0; // добавляем инициализацию новых полей
         }
-        public Helicopter(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int flightAltityde, int kolichestvoVintov)
+        public Helicopter(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint flightAltityde, uint kolichestvoVintov)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, flightAltityde)
         {
             this.kolichestvoVintov = kolichestvoVintov; // добавляем инициализацию новых полей
@@ -33,7 +33,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите количество винтов: ");
-                    kolichestvoVintov = int.Parse(Console.ReadLine());
+                    kolichestvoVintov = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
                 catch (Exception e)

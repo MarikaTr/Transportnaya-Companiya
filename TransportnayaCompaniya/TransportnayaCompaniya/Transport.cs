@@ -8,63 +8,63 @@ namespace TransportnayaCompaniya
 {
     class Transport
     {
-        public String firm; //создаем закрытый член нашего класса с названием фирмы автомобиля
-        public int speed; // закрытый член класса, содержащий максимальную скорость
-        public int kolPersonala;
-        public int kolPassajirov;
-        public int gruzopodjomnost;
+        public String firm; //создаем закрытый член нашего класса с названием модели тс
+        public uint speed; // 
+        public uint kolPersonala;
+        public uint kolPassajirov;
+        public uint gruzopodjomnost;
         //-Setters-----------------------------------------------------------------------------
         public void setFirm(string firm)
         { //открытая функция (метод класса) для задания
             this.firm = firm; //значения фирмы ts
         }
-        public void setSpeed(int speed)
+        public void setSpeed(uint speed)
         { //открытая функция (метод класса) для задания
-            this.speed = speed; //значения максимальной скорости ts
+            this.speed = speed; //значения скорости 
         }
-        public void setKolPersonala(int kolPersonala)
+        public void setKolPersonala(uint kolPersonala)
         { //открытая функция (метод класса) для задания
-            this.kolPersonala = kolPersonala; //значения максимальной скорости автомобиля
+            this.kolPersonala = kolPersonala; //кол-ва персонала
         }
-        public void setKolPassajirov(int kolPassajirov)
-        { //открытая функция (метод класса) для задания
-            this.kolPassajirov = kolPassajirov; //значения максимальной скорости автомобиля
+        public void setKolPassajirov(uint kolPassajirov)
+        { 
+            this.kolPassajirov = kolPassajirov; //кол-ва пассажиров
         }
-        public void setGruzopodjomnost(int gruzopodjomnost)
-        { //открытая функция (метод класса) для задания
-            this.gruzopodjomnost = gruzopodjomnost; //значения максимальной скорости автомобиля
+        public void setGruzopodjomnost(uint gruzopodjomnost)
+        { 
+            this.gruzopodjomnost = gruzopodjomnost; //грузоподъемности
         }
         //-Getters-------------------------------------------------------------------------------
         public String getFirm()
         { //открытая функция (метод класса) для вывода значения
             return firm; //заданной фирмы
         }
-        public int getSpeed()
+        public uint getSpeed()
         { //открытая функция (метод класса) для вывода значения
-            return speed; //максимальной скорости
+            return speed; // скорости
         }
-        public int getKolPersonala()
+        public uint getKolPersonala()
         { //открытая функция (метод класса) для вывода значения
-            return kolPersonala; //максимальной скорости
+            return kolPersonala; //кол-ва персонала
         }
-        public int getKolPassajirov()
+        public uint getKolPassajirov()
         { //открытая функция (метод класса) для вывода значения
-            return kolPassajirov; //максимальной скорости
+            return kolPassajirov; //кол-ва пассажиров
         }
-        public int getGruzopodjomnost()
+        public uint getGruzopodjomnost()
         { //открытая функция (метод класса) для вывода значения
-            return gruzopodjomnost; //максимальной скорости
+            return gruzopodjomnost; //грузоподъемности
         }
         //-Constructors-------------------------------------------------------------------
         public Transport()
         { // without parameters
-            firm = "Без названия";
+            firm = "Без назв";
             speed = 0;
             kolPersonala = 0;
             kolPassajirov = 0;
             gruzopodjomnost = 0;
         }
-        public Transport(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost)
+        public Transport(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost)
         { //with parameters
             this.firm = firm;
             this.speed = speed;
@@ -82,13 +82,13 @@ namespace TransportnayaCompaniya
             Console.WriteLine("Введите модель: ");
             setFirm(Console.ReadLine());
             Console.WriteLine("Введите скорость: ");
-            setSpeed(int.Parse(Console.ReadLine()));
+            setSpeed(uint.Parse(Console.ReadLine()));
             Console.WriteLine("Введите количество персонала: ");
-            setKolPersonala(int.Parse(Console.ReadLine()));
+            setKolPersonala(uint.Parse(Console.ReadLine()));
             Console.WriteLine("Введите количество пассажиров: ");
-            setKolPassajirov(int.Parse(Console.ReadLine()));
+            setKolPassajirov(uint.Parse(Console.ReadLine()));
             Console.WriteLine("Введите грузоподъемность: ");
-            setGruzopodjomnost(int.Parse(Console.ReadLine()));
+            setGruzopodjomnost(uint.Parse(Console.ReadLine()));
         }*/
         public void getInfo()
         {
@@ -110,6 +110,16 @@ namespace TransportnayaCompaniya
                 };
                 try
                 {
+                    /*Console.WriteLine("Введите модель: ");
+                    s = Console.ReadLine();
+                    if (s.Length < 8)
+                    {
+                        setFirm(s + "\t");
+                    }
+                    else
+                    {
+                        setFirm(s);
+                    }*/
                     Console.WriteLine("Введите модель: ");
                     s = Console.ReadLine();
                     setFirm(s);
@@ -127,7 +137,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите скорость: ");
-                    setSpeed(int.Parse(Console.ReadLine()));
+                    setSpeed(uint.Parse(Console.ReadLine()));
                     menu = false;
                 }
                 catch (Exception e)
@@ -142,7 +152,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите количество персонала: ");
-                    setKolPersonala(int.Parse(Console.ReadLine()));
+                    setKolPersonala(uint.Parse(Console.ReadLine()));
                     menu = false;
                 }
                 catch (Exception e)
@@ -157,7 +167,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите количество пассажиров: ");
-                    setKolPassajirov(int.Parse(Console.ReadLine()));
+                    setKolPassajirov(uint.Parse(Console.ReadLine()));
                     menu = false;
                 }
                 catch (Exception e)
@@ -172,7 +182,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите грузоподъемность: ");
-                    setGruzopodjomnost(int.Parse(Console.ReadLine()));
+                    setGruzopodjomnost(uint.Parse(Console.ReadLine()));
                     menu = false;
                 }
                 catch (Exception e)

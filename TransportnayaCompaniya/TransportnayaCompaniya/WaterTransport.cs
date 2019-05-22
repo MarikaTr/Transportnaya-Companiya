@@ -8,12 +8,12 @@ namespace TransportnayaCompaniya
 {
     class WaterTransport : Transport
     {
-        private int displacement; //водоизмещение
+        private uint displacement; //водоизмещение
         public WaterTransport() : base()
         {
             this.displacement = 0;
         }
-        public WaterTransport(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement) : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost)
+        public WaterTransport(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint displacement) : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost)
         {
             this.displacement = displacement; // добавляем инициализацию новых полей
         }
@@ -28,7 +28,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите водоизмещение: ");
-            displacement = int.Parse(Console.ReadLine());
+            displacement = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
                 catch (Exception e)

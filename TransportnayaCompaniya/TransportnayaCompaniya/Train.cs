@@ -13,7 +13,7 @@ namespace TransportnayaCompaniya
         {
             this.tipLokomotiva = "Не указано";
         }
-        public Train(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int chtoNibud, String tipLokomotiva)
+        public Train(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint chtoNibud, String tipLokomotiva)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, chtoNibud)
         {
             this.tipLokomotiva = tipLokomotiva; // добавляем инициализацию новых полей

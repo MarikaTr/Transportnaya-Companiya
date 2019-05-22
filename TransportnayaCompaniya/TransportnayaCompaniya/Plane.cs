@@ -8,12 +8,12 @@ namespace TransportnayaCompaniya
 {
     class Plane : AirTransport
     {
-        private int kolichestvoTurbin;
+        private uint kolichestvoTurbin;
         public Plane() : base()
         {
             this.kolichestvoTurbin = 0; // добавляем инициализацию новых полей
         }
-        public Plane(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int flightAltityde, int kolichestvoTurbin)
+        public Plane(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint flightAltityde, uint kolichestvoTurbin)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, flightAltityde)
         {
             this.kolichestvoTurbin = kolichestvoTurbin; // добавляем инициализацию новых полей
@@ -29,7 +29,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите количество турбин: ");
-            kolichestvoTurbin = int.Parse(Console.ReadLine());
+            kolichestvoTurbin = uint.Parse(Console.ReadLine());
             menu = false;
         }
                 catch (Exception e)

@@ -8,24 +8,24 @@ namespace TransportnayaCompaniya
 {
     class LandTransport : Transport
     {
-        private int tormoznoiPut;
+        private uint tormoznoiPut;
         //CConstructors-------------------------------------
         public LandTransport() : base()
         {
             this.tormoznoiPut = 0;
         }
-        public LandTransport(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int tormoznoiPut)
+        public LandTransport(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint tormoznoiPut)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost)
         {
             this.tormoznoiPut = tormoznoiPut;
         }
         //--Setters----------------------------------------
-        public void settormoznoiPut(int tormoznoiPut)
+        public void settormoznoiPut(uint tormoznoiPut)
         {
             this.tormoznoiPut = tormoznoiPut;
         }
         //--Getters-----------------------------------------
-        public int gettormoznoiPut()
+        public uint gettormoznoiPut()
         {
             return tormoznoiPut;
         }
@@ -39,7 +39,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите тормозной путь: ");
-                    tormoznoiPut = int.Parse(Console.ReadLine());
+                    tormoznoiPut = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
                 catch (Exception e)

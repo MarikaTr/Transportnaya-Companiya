@@ -13,7 +13,7 @@ namespace TransportnayaCompaniya
         {
             this.tipKuzova = "Не указано";
         }
-        public Truck(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int chtoNibud, String tipKuzova)
+        public Truck(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint chtoNibud, String tipKuzova)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, chtoNibud)
         {
             this.tipKuzova = tipKuzova; // добавляем инициализацию новых полей

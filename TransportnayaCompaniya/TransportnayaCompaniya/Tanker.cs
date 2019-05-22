@@ -8,12 +8,12 @@ namespace TransportnayaCompaniya
 {
     class Tanker : WaterTransport
     {
-        private int shirinaKorpusa; // 
+        private uint shirinaKorpusa; // 
         public Tanker() : base()
         {
             this.shirinaKorpusa = 0;
         }
-        public Tanker(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, int shirinaKorpusa)
+        public Tanker(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint displacement, uint shirinaKorpusa)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, displacement)
         {
             this.shirinaKorpusa = shirinaKorpusa; // добавляем инициализацию новых полей
@@ -29,7 +29,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите ширину корпуса: ");
-                    shirinaKorpusa = int.Parse(Console.ReadLine());
+                    shirinaKorpusa = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
                 catch (Exception e)

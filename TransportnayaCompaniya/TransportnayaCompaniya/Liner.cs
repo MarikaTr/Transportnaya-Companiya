@@ -8,12 +8,12 @@ namespace TransportnayaCompaniya
 {
     class Liner : WaterTransport
     {
-        private int kolichestvoZvezd; // 1 - 5
+        private uint kolichestvoZvezd; // 1 - 5
         public Liner() : base()
         {
             this.kolichestvoZvezd = 0; 
         }
-        public Liner(String firm, int speed, int kolPersonala, int kolPassajirov, int gruzopodjomnost, int displacement, int kolichestvoZvezd)
+        public Liner(String firm, uint speed, uint kolPersonala, uint kolPassajirov, uint gruzopodjomnost, uint displacement, uint kolichestvoZvezd)
             : base(firm, speed, kolPersonala, kolPassajirov, gruzopodjomnost, displacement)
         {
             this.kolichestvoZvezd = kolichestvoZvezd; // добавляем инициализацию новых полей
@@ -29,7 +29,7 @@ namespace TransportnayaCompaniya
                 try
                 {
                     Console.WriteLine("Введите количество звёзд: ");
-                    kolichestvoZvezd = int.Parse(Console.ReadLine());
+                    kolichestvoZvezd = uint.Parse(Console.ReadLine());
                     menu = false;
                 }
                 catch (Exception e)

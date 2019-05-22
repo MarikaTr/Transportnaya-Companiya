@@ -63,7 +63,7 @@ namespace TransportnayaCompaniya
             Boolean menu = true;
             do
             {
-                if (a >= 4)
+                if (a > 4)
                 {
                     Console.Clear();
                     Console.WriteLine("Неправильный ввод! Введите цифру от 0 до 3.");
@@ -73,6 +73,7 @@ namespace TransportnayaCompaniya
                     Console.WriteLine("Выберите пункт меню:" +
                         "\n\t1 - Просмотреть информацию о транспортых средствах." +
                         "\n\t2 - Внести новое транспортное средство." +
+                        "\n\t3 - Доставка грузов."+
                         "\n\t0 - Выйти из программы.");
                     a = uint.Parse(Console.ReadLine());
                     menu = false;
@@ -83,7 +84,7 @@ namespace TransportnayaCompaniya
                     Console.WriteLine("Неправильный ввод! Введите цифру от 0 до 3.");
                 };
             }
-            while ((menu == true) || (a >= 4));
+            while ((menu == true) || (a > 4));
             Console.Clear();
             return a;
         }
@@ -363,6 +364,68 @@ namespace TransportnayaCompaniya
             listHelic.ElementAt(listHelic.Count - 1).setInfoHelic();
             zavershenieVvoda();
         }
+        public static void dostavka()
+        {
+            Console.WriteLine("Напишите модель транспортного средства, с помощью которого вы хотите доставить груз:");
+            String str = Console.ReadLine();
+            int j = 0;
+            foreach (Helicopter x in listHelic)
+            {
+                if (x.getFirm() == str)
+                {
+                    x.dostavkaGruzov();
+                    Console.WriteLine("Dzigurda");
+                    j++;
+                }
+            }
+            foreach (Plane y in listPlane)
+            {
+                if (y.getFirm() == str)
+                {
+                    y.dostavkaGruzov();
+                    j++;
+                }
+            }
+            foreach (Train z in listTrain)
+            {
+                if (z.getFirm() == str)
+                {
+                    z.dostavkaGruzov();
+                    j++;
+                }
+            }
+            foreach (Truck q in listTruck)
+            {
+                if (q.getFirm() == str)
+                {
+                    q.dostavkaGruzov();
+                    j++;
+                }
+            }
+            foreach (Tanker w in listTanker)
+            {
+                if (w.getFirm() == str)
+                {
+                    w.dostavkaGruzov();
+                    j++;
+                }
+            }
+            foreach (Liner e in listLiner)
+            {
+                if (e.getFirm() == str)
+                {
+                    e.dostavkaGruzov();
+                    j++;
+                }
+            }
+            if (j == 0)
+            {
+                Console.WriteLine("Такого транспортного средства нет");
+            }
+            Console.WriteLine("Для продолжения работы нажмите любую клавишу");
+            Console.ReadKey();
+            mainMenu();
+        }
 
         public static void mainMenu()
         {
@@ -461,6 +524,9 @@ namespace TransportnayaCompaniya
                             }; break;
                         case 0: Environment.Exit(0); break;
                     }
+                    break;
+                case 3:
+                    dostavka();
                     break;
                 case 0:
                     Environment.Exit(0);
